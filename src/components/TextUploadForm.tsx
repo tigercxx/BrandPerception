@@ -1,6 +1,4 @@
-import { useState } from 'react';
-
-export const BACKEND_DOMAIN = 'http://localhost:4242/';
+import { BACKEND_DOMAIN } from '../config/env';
 
 const TextUploadForm = () => {
 	const showFile = async (event: React.ChangeEvent<HTMLInputElement>) => {
