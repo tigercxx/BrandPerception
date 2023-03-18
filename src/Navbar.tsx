@@ -15,7 +15,7 @@ export default function Navbar() {
                         </a>
                         <img
                             alt="Closed AI Logo"
-                            src={require("./assets/DALL·E 2023-03-16 19.34.20 - give me a logo for the words _ClosedAI_.png")}
+                            src={require("./assets/logo.png")}
                             className="object-contain h-24 w-48 inline-block leading-relaxed"
                         ></img>
                         <button
