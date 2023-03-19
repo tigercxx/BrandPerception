@@ -6,18 +6,19 @@ import { BACKEND_DOMAIN } from '../config/env';
 
 const SentenceForm = () => {
 	const sentenceRef = useRef<HTMLInputElement>(null);
+	const [hasSearchedSentence, setHasSearchedSentence] = useState(false);
 	const [sentenceResult, setSentenceResult] = useState({});
 	const [sentenceLoading, setSentenceLoading] = useState(false);
 
 	const sentenceOnClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
-		console.log(BACKEND_DOMAIN);
+
 		if (sentenceRef.current?.value.length === 0) {
 			alert('Enter your sentence!');
 			return;
 		}
 		setSentenceLoading(true);
 		setSentenceResult({});
-		console.log(sentenceRef.current?.value);
+        
 		const body = { inputText: sentenceRef.current?.value };
 		const response = await fetch(BACKEND_DOMAIN + 'predict', {
 			method: 'POST',
@@ -29,6 +30,7 @@ const SentenceForm = () => {
 		}
 		const result = await response.json();
 		setSentenceLoading(false);
+		setHasSearchedSentence(true);
 		setSentenceResult(result.data[0].output);
 		return result;
 	};
@@ -48,30 +50,29 @@ const SentenceForm = () => {
 	};
 
 	return (
-		<>
+		<div>
 			<label
-				htmlFor="subreddit"
+				htmlFor="sentence"
 				className="block mb-2 text-xl font-medium text-[#d4a373] dark:text-[#d4a373]"
 			>
 				Enter a sentence to test out our ABSA model
 			</label>
 			<div className="grid grid-rows-2">
-				<div className="grid grid-cols-4 row-span-1">
+				<div className="grid grid-cols-4 gap-4 row-span-1">
 					<input
-						id="subreddit"
+						id="sentence"
 						ref={sentenceRef}
-						name="subreddit"
-						className="col-span-2 block w-full p-4 text-[#d4a373] border border-[#d4a373] rounded-lg bg-[#fefae0] sm:text-md focus:ring-[#d4a373] focus:border-[#d4a373]"
+						name="sentence"
+						className="col-span-3 block h-10 px-2 text-[#d4a373] border border-[#d4a373] rounded-md bg-[#fefae0] sm:text-md focus:ring-[#d4a373] focus:border-[#d4a373]"
 					></input>
-					<div className="col-span-1 flex justify-center items-center">
+					<div className="col-span-1 w-full justify-center items-center">
 						<button
 							onClick={sentenceOnClick}
-							className="bg-[#faedcd] h-1/2 w-1/3 rounded-lg text-[#d4a373] border border-[#d4a373] hover:bg-[#eaddbd] min-w-fit	"
+							className="bg-[#faedcd] w-full py-2 rounded-md text-[#d4a373] border border-[#d4a373] hover:bg-[#eaddbd]"
 						>
 							Submit
 						</button>
 					</div>
-					<div className="col-span-1 "></div>
 				</div>
 				<div className="row-span-1">
 					{sentenceLoading && (
@@ -79,14 +80,12 @@ const SentenceForm = () => {
 							Loading...
 						</p>
 					)}
-					{Object.keys(sentenceResult).length !== 0 && (
-						<p className={Object.keys(sentenceResult).length !== 0 ? classes.test : ''}>
-							{sentenceResultRenderer(sentenceResult)}
-						</p>
+					{!sentenceLoading && hasSearchedSentence && (
+						<p className={classes.test}>{sentenceResultRenderer(sentenceResult)}</p>
 					)}
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 
