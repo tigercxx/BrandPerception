@@ -5,7 +5,6 @@ const TextUploadForm = () => {
 		event.preventDefault();
 
 		if (event.target.files && event.target.files.length > 0) {
-
 			const reader = new FileReader();
 			reader.onload = async (event) => {
 				const text = event.target!.result;
@@ -25,6 +24,7 @@ const TextUploadForm = () => {
 					throw new Error('Failed to send');
 				}
 				const result = await response.json();
+				console.log(result);
 			};
 			reader.readAsText(event.target!.files[0]);
 		}
