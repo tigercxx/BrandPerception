@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import TextUploadForm from './components/TextUploadForm';
 import SentenceForm from './components/SentenceForm';
 import RedditForm from './components/RedditForm';
+import Dashboard from './components/Dashboard';
 
 function App() {
 	return (
@@ -19,7 +20,9 @@ function App() {
 					<TextUploadForm />
 				</div>
 				<div className="p-10 xs: p-5">
-					<div className="bg-[#ffeeee] h-full"></div>
+					<div className="bg-[#ffeeee] h-full">
+						<Dashboard />
+					</div>
 				</div>
 			</div>
 		</div>

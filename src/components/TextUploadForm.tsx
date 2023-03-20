@@ -14,7 +14,7 @@ const TextUploadForm = () => {
 					body: text?.toString().split(/\r?\n/).filter(Boolean),
 				};
 
-				const response = await fetch(BACKEND_DOMAIN + 'predict_file', {
+				const response = await fetch(BACKEND_DOMAIN + 'predict-file', {
 					method: 'POST',
 					headers: { 'content-type': 'application/json' },
 					body: JSON.stringify(data),

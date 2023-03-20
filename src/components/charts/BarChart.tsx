@@ -2,28 +2,27 @@ import {
 	Chart as ChartJS,
 	CategoryScale,
 	LinearScale,
-	PointElement,
-	LineElement,
+	BarElement,
 	Title,
 	Tooltip,
 	Legend,
 } from 'chart.js';
-import { Line } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 export const options = {
-	responsive: true,
-	plugins: {
-		legend: {
-			position: 'bottom' as const,
-		},
-		title: {
-			display: true,
-			text: 'Chart.js Line Chart',
-		},
-	},
-};
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'bottom' as const,
+      },
+      title: {
+        display: true,
+        text: 'Chart.js Bar Chart',
+      },
+    },
+  };
 
 export const data = {
 	labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -36,9 +35,9 @@ export const data = {
 	],
 };
 
-export function LineChart() {
+export function BarChart() {
 	return (
-		<Line
+		<Bar
 			data={data}
 			options={options}
 		/>

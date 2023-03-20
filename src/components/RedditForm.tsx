@@ -20,7 +20,7 @@ const RedditForm = () => {
 			q: contentInRedditRef.current?.value,
 		};
 
-		const response = await fetch(BACKEND_DOMAIN + 'predict_reddit', {
+		const response = await fetch(BACKEND_DOMAIN + 'predict-reddit', {
 			method: 'POST',
 			headers: { 'content-type': 'application/json' },
 			body: JSON.stringify(body),
