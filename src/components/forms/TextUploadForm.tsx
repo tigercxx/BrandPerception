@@ -1,4 +1,4 @@
-import { BACKEND_DOMAIN } from '../config/env';
+import { BACKEND_DOMAIN } from '../../config/env';
 
 const TextUploadForm = () => {
 	const showFile = async (event: React.ChangeEvent<HTMLInputElement>) => {

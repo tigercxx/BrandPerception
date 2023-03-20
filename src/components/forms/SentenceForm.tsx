@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react';
 
-import classes from '../App.module.css';
+import classes from './Form.module.css';
 
-import { BACKEND_DOMAIN } from '../config/env';
+import { BACKEND_DOMAIN } from '../../config/env';
 
 const SentenceForm = () => {
 	const sentenceRef = useRef<HTMLInputElement>(null);
@@ -11,14 +11,13 @@ const SentenceForm = () => {
 	const [sentenceLoading, setSentenceLoading] = useState(false);
 
 	const sentenceOnClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
-
 		if (sentenceRef.current?.value.length === 0) {
 			alert('Enter your sentence!');
 			return;
 		}
 		setSentenceLoading(true);
 		setSentenceResult({});
-        
+
 		const body = { inputText: sentenceRef.current?.value };
 		const response = await fetch(BACKEND_DOMAIN + 'predict', {
 			method: 'POST',

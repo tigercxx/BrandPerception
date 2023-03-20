@@ -1,9 +1,14 @@
-import React from 'react';
 import Navbar from './components/Navbar';
-import TextUploadForm from './components/TextUploadForm';
-import SentenceForm from './components/SentenceForm';
-import RedditForm from './components/RedditForm';
-import Dashboard from './components/Dashboard';
+import Tabs from './components/Tabs';
+import RedditTab from './components/pages/RedditTab';
+import SentenceTab from './components/pages/SentenceTab';
+import TextFileTab from './components/pages/TextFileTab';
+
+const tabs = [
+	{ label: 'Reddit', content: <RedditTab /> },
+	{ label: 'Sentence', content: <SentenceTab /> },
+	{ label: 'Text file', content: <TextFileTab /> },
+];
 
 function App() {
 	return (
@@ -13,17 +18,8 @@ function App() {
 				Next Generation Brand Research
 			</h1>
 			<h2 className="text-xl font-bold text-[#d4a373] text-center">Test it out!</h2>
-			<div className="grid md:grid-cols-2 xs: grid-cols-1 gap-2 h-max">
-				<div className="px-10 xs: px-5">
-					<RedditForm />
-					<SentenceForm />
-					<TextUploadForm />
-				</div>
-				<div className="p-10 xs: p-5">
-					<div className="bg-[#ffeeee] h-full">
-						<Dashboard />
-					</div>
-				</div>
+			<div className="py-2 px-5 h-max mx-auto">
+				<Tabs tabs={tabs} />
 			</div>
 		</div>
 	);
