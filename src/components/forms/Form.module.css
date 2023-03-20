@@ -18,7 +18,7 @@ p:hover + .morbid {
 	}
 }
 
-.test {
+.slideinleft {
 	width: auto;
 	max-width: 100%;
 	white-space: nowrap;
@@ -32,4 +32,33 @@ p:hover + .morbid {
 	--tw-text-opacity: 1;
 	color: #d4a373;
 	margin: 1rem;
+}
+
+@keyframes slideInFromTop {
+	0% {
+		max-height: 0%;
+	}
+	100% {
+		max-height: 100%;
+	}
+}
+
+
+.slideinfromtop {
+	width: auto;
+	max-width: 100%;
+	/* white-space: nowrap; */
+	max-height: 50vh;
+	overflow: hidden;
+	animation: 3s ease-in 0s 1 slideInFromTop;
+	display: block;
+	margin-bottom: 0.5rem;
+	font-size: 1.25rem /* 20px */;
+	line-height: 1.75rem /* 28px */;
+	font-weight: 500;
+	--tw-text-opacity: 1;
+	color: #bc6c25;
+	margin: 1rem;
+	overflow: auto;
+
 }
