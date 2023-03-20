@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/BrandPerception/static/css/main.34ac6598.css",
+    "main.js": "/BrandPerception/static/js/main.3b903f02.js",
+    "static/media/logo_2.png": "/BrandPerception/static/media/logo_2.dd03764247a6f32a35b9.png",
+    "index.html": "/BrandPerception/index.html",
+    "main.34ac6598.css.map": "/BrandPerception/static/css/main.34ac6598.css.map",
+    "main.3b903f02.js.map": "/BrandPerception/static/js/main.3b903f02.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.34ac6598.css",
+    "static/js/main.3b903f02.js"
+  ]
+}
