@@ -12,3 +12,10 @@ export interface Data {
         [key: string]: string;
     };
 }
+
+export interface Polarities {
+    count: number;
+    negative: number;
+    positive: number;
+    neutral: number;
+}
