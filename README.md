@@ -1,1 +1,3 @@
 # BrandPerception
+
+npm run deploy
