@@ -1,18 +1,13 @@
-import React from "react";
-import { BarChart } from "./BarChart";
-import { LineChart } from "./LineChart";
+import { BarChart } from './BarChart';
 
 function Dashboard() {
-    return (
-        <div className="sm:grid grid-cols-2 gap-2">
-            <div>
-                <BarChart />
-            </div>
-            <div>
-                <LineChart />
-            </div>
-        </div>
-    );
+	return (
+		<div className="sm:grid grid-cols-2 gap-2">
+			<div>
+				<BarChart />
+			</div>
+		</div>
+	);
 }
 
 export default Dashboard;
