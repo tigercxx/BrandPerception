@@ -36,13 +36,12 @@
 	width: auto;
 	max-width: 100%;
 	/* white-space: nowrap; */
-	max-height: 50vh;
-	overflow: hidden;
+	max-height: 100%;
 	animation: 3s ease-in 0s 1 slideInFromTop;
 	display: block;
 	margin-bottom: 0.5rem;
-	font-size: 1.25rem /* 20px */;
-	line-height: 1.75rem /* 28px */;
+	font-size: 1.2rem /* 20px */;
+	line-height: 1.5rem /* 28px */;
 	font-weight: 500;
 	--tw-text-opacity: 1;
 	color: #bc6c25;

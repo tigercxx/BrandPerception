@@ -9,15 +9,15 @@ type Props = {
 
 function RedditResults(props: Props) {
 	return (
-		<div className="sm:grid row-span-1 grid-cols-5 max-h-10 ">
-			<div className="col-span-1">
+		<div className="sm:grid row-span-1 grid-cols-5 h-20">
+			<div className="col-span-1 h-full">
 				<p className={classes.slideinleft}>Count: {props.state?.count}</p>
 				<p className={classes.slideinleft}>Positive: {props.state?.positive}</p>
 				<p className={classes.slideinleft}>Negative: {props.state?.negative}</p>
 				<p className={classes.slideinleft}>Neutral: {props.state?.neutral}</p>
 			</div>
-			<div className="sm:col-span-4 w-full border-2 rounded-2xl">
-				<div className={classes.slideinfromtop}>
+			<div className="sm:col-span-4 w-full border-2 rounded-2xl h-full overflow-y-hidden">
+				<div className={classes.slideinfromtop + ' h-full overflow-y-scroll'}>
 					{props.state?.data.map((data) => {
 						return (
 							<div

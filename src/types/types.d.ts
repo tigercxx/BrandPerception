@@ -7,6 +7,7 @@ export interface Results {
 }
 
 export interface ResultsBody {
+	reddit: Array<string>;
 	predictions: Results;
 }
 
@@ -22,4 +23,15 @@ export interface Polarities {
 	negative: number;
 	positive: number;
 	neutral: number;
+}
+
+export interface RestaurantDictionary {
+	food: string[];
+	ambiance: string[];
+	service: string[];
+	value: string[];
+}
+
+export interface RestaurantCategorySentiment {
+	[key: string]: Polarities;
 }
