@@ -109,7 +109,6 @@ const RedditForm = () => {
                     </div>
                 </div>
             </div>
-            {/* {results && ( */}
             {
                 <div className="sm:grid row-span-1 grid-cols-5 max-h-10 ">
                     <div className="col-span-1">
