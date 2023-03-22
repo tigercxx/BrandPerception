@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/BrandPerception/static/css/main.45701b81.css",
-    "main.js": "/BrandPerception/static/js/main.ce19c1e3.js",
+    "main.js": "/BrandPerception/static/js/main.411b6d3e.js",
     "static/media/logo_2.png": "/BrandPerception/static/media/logo_2.dd03764247a6f32a35b9.png",
     "index.html": "/BrandPerception/index.html",
     "main.45701b81.css.map": "/BrandPerception/static/css/main.45701b81.css.map",
-    "main.ce19c1e3.js.map": "/BrandPerception/static/js/main.ce19c1e3.js.map"
+    "main.411b6d3e.js.map": "/BrandPerception/static/js/main.411b6d3e.js.map"
   },
   "entrypoints": [
     "static/css/main.45701b81.css",
-    "static/js/main.ce19c1e3.js"
+    "static/js/main.411b6d3e.js"
   ]
 }
