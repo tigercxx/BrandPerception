@@ -1,6 +1,12 @@
 import { BACKEND_DOMAIN } from '../../config/env';
+import { Results } from '../../types/types';
 
-const TextUploadForm = () => {
+type Props = {
+	state: Results | null;
+	onStateChange: (results: Results) => void;
+};
+
+const TextUploadForm = (props: Props) => {
 	const showFile = async (event: React.ChangeEvent<HTMLInputElement>) => {
 		event.preventDefault();
 
@@ -31,23 +37,20 @@ const TextUploadForm = () => {
 	};
 
 	return (
-		<div>
-			<div>
-				<form encType="multipart/form-data">
-					<input
-						type="file"
-						name="text_to_upload"
-						onChange={(e) => showFile(e)}
-						className="block w-full text-sm text-slate-500
+		<form encType="multipart/form-data">
+			<input
+				type="file"
+				name="text_to_upload"
+				disabled={true}
+				onChange={(e) => showFile(e)}
+				className="block w-full text-sm text-slate-500
                         file:mr-4 file:py-2 file:px-4
                         file:rounded-full file:border-0
                         file:text-sm file:font-semibold
-                        file:bg-violet-50 file:text-violet-700
-                        hover:file:bg-violet-100"
-					/>
-				</form>
-			</div>
-		</div>
+                        file:bg-amber-300 file:text-amber-700
+                        hover:file:bg-amber-100"
+			/>
+		</form>
 	);
 };
 export default TextUploadForm;
