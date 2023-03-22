@@ -36,42 +36,32 @@ const SentenceForm = () => {
 	};
 
 	return (
-		<div>
-			<label
-				htmlFor="sentence"
-				className="block mb-2 text-xl font-medium text-[#d4a373] dark:text-[#d4a373]"
-			>
-				Enter a sentence to test out our ABSA model
-			</label>
-			<div className="grid grid-rows-2">
-				<div className="grid grid-cols-4 gap-4 row-span-1">
-					<input
-						id="sentence"
-						ref={sentenceRef}
-						name="sentence"
-						className="col-span-3 block h-10 px-2 text-[#d4a373] border border-[#d4a373] rounded-md bg-[#fefae0] sm:text-md focus:ring-[#d4a373] focus:border-[#d4a373]"
-					></input>
-					<div className="col-span-1 w-full justify-center items-center">
-						<button
-							onClick={sentenceOnClick}
-							className="bg-[#faedcd] w-full py-2 rounded-md text-[#d4a373] border border-[#d4a373] hover:bg-[#eaddbd]"
-						>
-							Submit
-						</button>
-					</div>
+		<div className="grid grid-rows-2">
+			<div className="grid grid-cols-4 gap-4 row-span-1 content-center">
+				<input
+					id="sentence"
+					ref={sentenceRef}
+					name="sentence"
+					className="col-span-3 block h-10 px-2 text-[#d4a373] border border-[#d4a373] rounded-md bg-[#fefae0] text-sm md:text-lg focus:ring-[#d4a373] focus:border-[#d4a373]"
+				></input>
+				<div className="col-span-1 w-full justify-center items-center">
+					<button
+						onClick={sentenceOnClick}
+						className="bg-[#faedcd] w-full py-2 text-sm md:text-lg rounded-md text-[#d4a373] border border-[#d4a373] hover:bg-[#eaddbd]"
+					>
+						Submit
+					</button>
 				</div>
-				<div className="row-span-1">
-					{sentenceLoading && (
-						<p className="animate-bounce block mb-2 text-xl font-medium text-[#d4a373] dark:text-[#d4a373] m-5">
-							Loading...
-						</p>
-					)}
-					{!sentenceLoading && hasSearchedSentence && (
-						<p className={classes.slideinleft}>
-							{sentenceResultRenderer(sentenceResult)}
-						</p>
-					)}
-				</div>
+			</div>
+			<div className="row-span-1">
+				{sentenceLoading && (
+					<p className="animate-bounce block mb-2 text-sm md:text-xl font-medium text-[#d4a373] dark:text-[#d4a373] m-5">
+						Loading...
+					</p>
+				)}
+				{!sentenceLoading && hasSearchedSentence && (
+					<p className={classes.slideinleft}>{sentenceResultRenderer(sentenceResult)}</p>
+				)}
 			</div>
 		</div>
 	);

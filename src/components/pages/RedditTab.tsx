@@ -26,7 +26,6 @@ function RedditTab() {
 				.filter(([key]) => key !== null)
 				.forEach(([key, value]) => {
 					const category: string = findCategory(key);
-					console.log(category);
 					if (!(category in output)) {
 						output[category] = {
 							count: 0,
@@ -69,15 +68,15 @@ function RedditTab() {
 
 	return (
 		<div>
-			<div className="grid sm:grid-cols-3 xs:grid-cols-1 gap-10">
-				<div className="col-span-2">
-					<Dashboard />
-				</div>
+			<div className="grid grid-cols-1 md:grid-cols-3 md:gap-10">
 				<div className="col-span-1">
 					<RedditForm
 						state={results}
 						onStateChange={handleResultChange}
 					/>
+				</div>
+				<div className="col-span-2">
+					<Dashboard />
 				</div>
 			</div>
 			<div>

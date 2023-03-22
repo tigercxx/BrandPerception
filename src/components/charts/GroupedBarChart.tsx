@@ -16,7 +16,7 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
 export function GroupedBarChart() {
 	const [aspectCategory] = useAtom(aspectCategoryPolaritiesAtom);
-	console.log('here', aspectCategory);
+
 	const options = {
 		plugins: {
 			legend: {

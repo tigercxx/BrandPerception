@@ -15,14 +15,16 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
 export const options = {
 	responsive: true,
+	maintainAspectRatio: true,
 	plugins: {
 		legend: {
-			position: 'bottom' as const,
+			display: false,
 		},
 		title: {
 			display: true,
 			text: 'Polarities',
 		},
+		datalabels: {},
 	},
 };
 
@@ -34,7 +36,6 @@ export function BarChart() {
 		datasets: [
 			{
 				label: 'Count',
-				// backgroundColor: "rgba(75,192,192,1)",
 				backgroundColor: [
 					'rgba(0, 230, 118, 0.7)',
 					'rgba(229, 57, 53, 0.7)',

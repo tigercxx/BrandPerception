@@ -1,6 +1,4 @@
-import React from 'react';
 import { Results } from '../../types/types';
-import { sentenceResultRenderer } from '../forms/SentenceResultRender';
 import classes from './Result.module.css';
 
 type Props = {
@@ -9,30 +7,24 @@ type Props = {
 
 function RedditResults(props: Props) {
 	return (
-		<div className="sm:grid row-span-1 grid-cols-5 h-20">
-			<div className="col-span-1 h-full">
-				<p className={classes.slideinleft}>Count: {props.state?.count}</p>
-				<p className={classes.slideinleft}>Positive: {props.state?.positive}</p>
-				<p className={classes.slideinleft}>Negative: {props.state?.negative}</p>
-				<p className={classes.slideinleft}>Neutral: {props.state?.neutral}</p>
-			</div>
-			<div className="sm:col-span-4 w-full border-2 rounded-2xl h-full overflow-y-hidden">
-				<div className={classes.slideinfromtop + ' h-full overflow-y-scroll'}>
-					{props.state?.data.map((data) => {
+		<div className="w-full overflow-x-hidden border-2 rounded-2xl text-sm md:text-md">
+			<div className={classes.slideinfromtop}>
+				{props.state?.data
+					.filter((data) => Object.keys(data.output).length !== 0)
+					.map((data) => {
 						return (
 							<div
-								className="grid grid-rows-1 "
+								className="grid grid-rows-1"
 								key={data.input}
 							>
-								<div className="row-span-1 ">{data.input}</div>
-								<div className="underline">
-									{sentenceResultRenderer(data.output)}
+								<div className="font-medium text-lg">
+									{JSON.stringify(data.output).toString()}
 								</div>
+								<div className="">{data.input}</div>
 								<br />
 							</div>
 						);
 					})}
-				</div>
 			</div>
 		</div>
 	);
